@@ -4,14 +4,20 @@
   th:replace="~{layout :: html(head = null,content = ~{::content})}"
 >
   <th:block th:fragment="content">
-    <h1>标签</h1>
-    <ul>
-      <li th:each="tag : ${tags}">
-        <a
-          th:href="@{${tag.status.permalink}}"
-          th:text="${tag.spec.displayName}"
-        ></a>
-      </li>
-    </ul>
+    
+    <div class="content">
+      <div class="page_tags">
+          <ul>
+            <li th:each="tag : ${tags}" th:if="${tag.status.visiblePostCount gt 0}" >
+                <a
+                  th:href="@{${tag.status.permalink}}"
+                  th:inline="text">
+                  [[${tag.spec.displayName}]]
+                    <span class="terms_count" th:text="${tag.status.visiblePostCount}"></span>
+                </a>
+            </li>
+          </ul>
+      </div>
+      <div class="pagination"></div>
   </th:block>
 </html>
