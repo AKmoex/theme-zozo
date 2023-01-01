@@ -1,13 +1,46 @@
 apiVersion: v1alpha1
 kind: Setting
 metadata:
-  name: theme-starter-setting
+  name: theme-zozo-setting
 spec:
   forms:
-    - group: style
-      label: 样式
+    - group: basic
+      label: 基础设置
       formSchema:
-        - $formkit: color
-          name: background_color
-          label: 背景颜色
-          value: "#f2f2f2"
+        - $formkit: text
+          name: sub_title
+          label: 二级标题
+          value: Opposite is endless darkness
+        - $formkit: text
+          name: footer_slogan
+          label: 页脚标语
+          value: 我的精神家园
+
+    - group: sns
+      label: 社交资料
+      formSchema:
+        - $formkit: text
+          name: github
+          label: Github
+          value: https://github.com/halo-sigs/theme-starter
+        - $formkit: text
+          name: twitter
+          label: Twitter
+          value: https://github.com/halo-sigs/theme-starter
+        - $formkit: text
+          name: facebook
+          label: Facebook
+          value: https://github.com/halo-sigs/theme-starter
+        - $formkit: text
+          name: weibo
+          label: Weibo
+          value: https://github.com/halo-sigs/theme-starter
+        - $formkit: text
+          name: instagram
+          label: Instagram
+          value: https://github.com/halo-sigs/theme-starter
+        - $formkit: text
+          name: steam
+          label: Steam
+          value: https://github.com/halo-sigs/theme-starter
+          

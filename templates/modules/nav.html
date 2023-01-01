@@ -1,0 +1,15 @@
+<div th:fragment="nav" class="nav_container animated fadeInDown">
+    <div th:with="menu = ${menuFinder.getPrimary()}" class="site_nav" id="site_nav">
+        <ul th:if="${menu != null} and ${not #lists.isEmpty(menu.menuItems)}">
+            <li th:each="menuItem : ${menu.menuItems}">
+                <a 
+                    th:href="@{${menuItem.status.href}}" 
+                    th:text="${menuItem.status.displayName}"
+                ></a>
+            </li>
+        </ul>
+    </div>
+    <div class="menu_icon">
+        <a id="menu_icon"><i class="ri-menu-line"></i></a>
+    </div>
+</div>

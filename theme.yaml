@@ -1,7 +1,7 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: theme-starter
+  name: theme-zozo
 spec:
   displayName: Theme Starter
   author:
@@ -11,7 +11,7 @@ spec:
   logo: "https://halo.run/logo"
   website: "https://halo.run"
   repo: "https://github.com/halo-sigs/theme-starter"
-  settingName: "theme-starter-setting"
-  configMapName: "theme-starter-configMap"
+  settingName: "theme-zozo-setting"
+  configMapName: "theme-zozo-configMap"
   version: "1.0"
   require: "*"
