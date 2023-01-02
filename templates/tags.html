@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,content = ~{::content})}"
+  th:replace="~{layout :: html(head = null,title = 'Tags ｜ ' + ${site.title},content = ~{::content})}"
 >
   <th:block th:fragment="content">
     

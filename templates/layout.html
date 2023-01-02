@@ -2,9 +2,9 @@
 <html
   lang="zh-cn"
   xmlns:th="https://www.thymeleaf.org"
-  th:fragment="html (head,content)"
+  th:fragment="html (head,title,content)"
 >
-  <head th:replace="~{modules/head::head}" >
+  <head th:replace="~{modules/head::head (head=${head},title=${title})}" >
   </head>
 
   <body>
