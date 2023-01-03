@@ -43,4 +43,16 @@ spec:
           name: steam
           label: Steam
           value: https://github.com/halo-sigs/theme-starter
+        - $formkit: text
+          name: zhihu
+          label: Zhihu
+          value: https://github.com/halo-sigs/theme-starter
+        - $formkit: text
+          name: telegram
+          label: Telegram
+          value: https://github.com/halo-sigs/theme-starter
+        - $formkit: text
+          name: playstation
+          label: PlayStation
+          value: https://github.com/halo-sigs/theme-starter
           
