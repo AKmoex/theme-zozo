@@ -7,7 +7,11 @@
     <meta name="author" content=${metadata.name!}/>
     <meta name="description" content="${meta_description!}"/>
     <meta name="keywords" content="${meta_keywords!}"/>
-
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+  />
     <title th:text="${title}"></title>
 
     <th:block th:if="${head != null}">

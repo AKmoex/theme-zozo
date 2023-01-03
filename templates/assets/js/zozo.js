@@ -37,6 +37,23 @@ $(document).ready((function (_this) {
   }
 })(this))
 
+$(document).ready((function (_this) {
+  return function () {
+if ($(".post_content.markdown").length > 0 && $(".post_content.markdown").find("p").find("img").length > 0) {
+  var $imgs = $(".post_content.markdown").find("p").find("img");
+  $imgs.each(function () {
+    if (!$(this).hasClass("gallery-img")) {
+      $(this)
+        .addClass("gallery-img")
+        .wrap('<div class="fancybox"> <a data-fancybox="gallery"  href="' + $(this).attr("src") + '" class="fancybox"></a></div>');
+    }
+  });
+}
+  }
+})(this))
+
+
+
 // FancyBox
 $('[data-fancybox="gallery"]').fancybox({
   arrows: false,
@@ -53,3 +70,4 @@ $('[data-fancybox="gallery"]').fancybox({
     dblclickSlide: false
   },
 });
+
