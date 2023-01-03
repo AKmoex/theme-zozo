@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,title = ${site.title} ,content = ~{::content})}"
+  th:replace="~{layout :: html(head =  ~{::head},title = ${post.spec.title} + ' ｜ ' + ${site.title} ,content = ~{::content})}"
 >
-  <th:block th:fragment="content">
-    <h1 th:text="${post.spec.title}"></h1>
-    <article th:utext="${post.content.content}"></article>
+
+
+
+<th:block th:fragment="content">
+    <div class="content">
+      <div class="post_page">
+        <div class="post animated fadeInDown">
+            <div class="post_title post_detail_title">
+                <h2><a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a></h2>
+                <span class="date" th:text="${#dates.format(post.spec.publishTime,'yyyy.MM.dd')}"></span>
+            </div>
+            <div class="post_content markdown" th:utext="${post.content.content}"></div>
+            <div class="post_footer">
+                <div class="post_footer">
+                        <div class="meta" th:if="${not #lists.isEmpty(post.tags)}">
+                            <div class="info">
+                          <span class="field tags">
+                            <i class="ri-stack-line"></i>
+                           
+
+                            <th:block th:each="tag : ${post.tags}">
+                                <a th:href="@{${tag.status.permalink}}"
+                                    th:title="${tag.spec.displayName}"
+                                    th:text="${tag.spec.displayName}"
+                                    ></a>
+                            </th:block>
+                          </span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </th:block>
 </html>
+
