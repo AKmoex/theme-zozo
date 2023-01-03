@@ -44,8 +44,7 @@ if ($(".post_content.markdown").length > 0 && $(".post_content.markdown").find("
   $imgs.each(function () {
     if (!$(this).hasClass("gallery-img")) {
       $(this)
-        .addClass("gallery-img")
-        .wrap('<div class="fancybox"> <a data-fancybox="gallery"  href="' + $(this).attr("src") + '" class="fancybox"></a></div>');
+        .wrap('<div class="fancybox"> <a data-fancybox="gallery"  href="' + $(this).attr("src") + '"></a></div>');
     }
   });
 }
@@ -54,20 +53,25 @@ if ($(".post_content.markdown").length > 0 && $(".post_content.markdown").find("
 
 
 
-// FancyBox
-$('[data-fancybox="gallery"]').fancybox({
-  arrows: false,
-  infobar: false,
-  buttons: [],
-  clickContent: "close",
-  autoFocus: false,
-  backFocus: false,
-  wheel: false,
-  mobile: {
-    clickContent: "close",
-    clickSlide: "close",
-    dblclickContent: false,
-    dblclickSlide: false
-  },
+// // FancyBox
+// $('[data-fancybox="gallery"]').fancybox({
+//   arrows: false,
+//   infobar: false,
+//   buttons: [],
+//   clickContent: "close",
+//   autoFocus: false,
+//   backFocus: false,
+//   wheel: false,
+//   hideScrollbar:false,
+//   mobile: {
+//     clickContent: "close",
+//     clickSlide: "close",
+//     dblclickContent: false,
+//     dblclickSlide: false,
+//   },
+// });
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+  hideScrollbar:false,
 });
 
