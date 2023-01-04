@@ -1,10 +1,16 @@
 <div class="doc_comments" th:fragment="comments">
   <div id="disqus_thread"></div>
-  <script>
+  <script th:inline="javascript">
+
     (function () { // DON'T EDIT BELOW THIS LINE
       var d = document,
         s = d.createElement("script");
-      s.src = "https://akmoex.disqus.com/embed.js";
+      /*<![CDATA[*/
+
+      var shortname = /*[[${theme.config.basic.disqus_shortname}]]*/ '';
+
+      /*]]>*/
+      s.src = "https://" + shortname + ".disqus.com/embed.js";
       s.setAttribute("data-timestamp", + new Date());
       (d.head || d.body).appendChild(s);
     })();

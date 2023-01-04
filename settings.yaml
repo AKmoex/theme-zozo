@@ -26,6 +26,7 @@ spec:
               value: false
         - $formkit: radio
           name: disqus
+          id: disqus
           label: Disqus 评论系统
           value: true
           options:
@@ -33,6 +34,12 @@ spec:
               value: true
             - label: 停用
               value: false
+        - $formkit: text
+          if: "$get(disqus).value"
+          name: disqus_shortname
+          id: disqus_shortname
+          label: Disqus site shortname
+          help: disqus.com创建站点的唯一shortname
 
     - group: sns
       label: 社交资料

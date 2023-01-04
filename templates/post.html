@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <th:block th:if="${theme.config.basic.disqus}">
+      <th:block th:if="(${theme.config.basic.disqus} and ${not #strings.isEmpty(theme.config.basic.disqus_shortname)})">
         <th:block th:replace="~{modules/comments::comments}">
         </th:block>
       </th:block>
