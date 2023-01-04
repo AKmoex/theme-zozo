@@ -15,6 +15,15 @@ spec:
           name: footer_slogan
           label: 页脚标语
           value: 我的精神家园
+        - $formkit: radio
+          name: mathjax
+          label: MathJax 公式渲染
+          value: true
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false
 
     - group: sns
       label: 社交资料
