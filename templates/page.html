@@ -25,7 +25,9 @@
             <div class="post_footer">
             </div>
         </div>
-        <th:block th:replace="~{modules/comments::comments}" >
+        <th:block th:if="${theme.config.basic.disqus}">
+          <th:block th:replace="~{modules/comments::comments}" >
+        </th:block>
         </th:block>
       </div>
     </div>

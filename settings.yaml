@@ -24,6 +24,15 @@ spec:
               value: true
             - label: 关闭
               value: false
+        - $formkit: radio
+          name: disqus
+          label: Disqus 评论系统
+          value: true
+          options:
+            - label: 启用
+              value: true
+            - label: 停用
+              value: false
 
     - group: sns
       label: 社交资料
@@ -31,37 +40,30 @@ spec:
         - $formkit: text
           name: github
           label: Github
-          value: https://github.com/halo-sigs/theme-starter
         - $formkit: text
           name: twitter
           label: Twitter
-          value: https://github.com/halo-sigs/theme-starter
         - $formkit: text
           name: facebook
           label: Facebook
-          value: https://github.com/halo-sigs/theme-starter
         - $formkit: text
           name: weibo
           label: Weibo
-          value: https://github.com/halo-sigs/theme-starter
         - $formkit: text
           name: instagram
           label: Instagram
-          value: https://github.com/halo-sigs/theme-starter
         - $formkit: text
           name: steam
           label: Steam
-          value: https://github.com/halo-sigs/theme-starter
         - $formkit: text
           name: zhihu
           label: Zhihu
-          value: https://github.com/halo-sigs/theme-starter
         - $formkit: text
           name: telegram
           label: Telegram
-          value: https://github.com/halo-sigs/theme-starter
         - $formkit: text
           name: playstation
           label: PlayStation
-          value: https://github.com/halo-sigs/theme-starter
+          help: "示例：https://psnprofiles.com/AKmoex"
+
           
