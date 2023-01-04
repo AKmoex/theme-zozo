@@ -353,6 +353,7 @@ hr {
 .footer .powered_by {
   margin: 0;
   font-size: 11px;
+  color: #cccccc;
 }
 
 .footer .powered_by a {

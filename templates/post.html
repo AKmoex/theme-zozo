@@ -4,6 +4,11 @@
   th:replace="~{layout :: html(head =  ~{::head},title = ${post.spec.title} + ' ｜ ' + ${site.title} ,content = ~{::content})}"
 >
 <th:block th:fragment="head">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@3.0/dist/browser/styles/disqusjs.css">
 </th:block>
 

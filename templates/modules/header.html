@@ -2,13 +2,14 @@
     <div class="site_title_container">
         <div class="site_title">
             <h1>
-                <a href="/">
-                    <span>ZO ZO</span>
-                </a>
+              <a th:href="@{${site.url}}">
+                <span th:text="${site_title}"></span>
+                <img th:src="@{/assets/images/logo.svg}"/>
+              </a>
             </h1>
         </div>
         <div class="description">
-            <p class="sub_title" th:text="${theme.config.basic.sub_title}"></p>
+            <p class="sub_title"  th:if="${not #strings.isEmpty(theme.config.basic.sub_title)}" th:text="${theme.config.basic.sub_title}"></p>
 
             <div class="my_socials">
               <a th:if="${not #strings.isEmpty(theme.config.sns.github)}" th:href="${theme.config.sns.github}" title="github" target="_blank">

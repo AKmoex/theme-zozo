@@ -3,15 +3,15 @@ kind: Theme
 metadata:
   name: theme-zozo
 spec:
-  displayName: Theme Starter
+  displayName: Theme ZOZO
   author:
-    name: halo-dev
-    website: "https://halo.run"
-  description: Halo 2.0 Theme base on Thymeleaf
+    name: AKmoex (原作者 varkai > https://github.com/varkai/hugo-theme-zozo)
+    website: "https://blog.akmoex.com"
+  description: Theme ZOZO 移植自 hugo-theme-zozo, 参考halo-theme-zozo
   logo: "https://halo.run/logo"
-  website: "https://halo.run"
-  repo: "https://github.com/halo-sigs/theme-starter"
+  website: "https://zozo-demo.akmoex.com"
+  repo: "https://github.com/AKmoex/theme-zozo"
   settingName: "theme-zozo-setting"
   configMapName: "theme-zozo-configMap"
-  version: "1.0"
-  require: "*"
+  version: "1.0.0"
+  require: "2.0.0"
