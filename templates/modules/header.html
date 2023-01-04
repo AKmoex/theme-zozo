@@ -1,47 +1,55 @@
 <div th:fragment="header" class="header animated fadeInDown">
-    <div class="site_title_container">
-        <div class="site_title">
-            <h1>
-              <a th:href="@{${site.url}}">
-                <span th:text="${site_title}"></span>
-                <img th:src="@{/assets/images/logo.svg}"/>
-              </a>
-            </h1>
-        </div>
-        <div class="description">
-            <p class="sub_title"  th:if="${not #strings.isEmpty(theme.config.basic.sub_title)}" th:text="${theme.config.basic.sub_title}"></p>
-
-            <div class="my_socials">
-              <a th:if="${not #strings.isEmpty(theme.config.sns.github)}" th:href="${theme.config.sns.github}" title="github" target="_blank">
-                <i class="ri-github-fill"></i>
-              </a>
-              <a th:if="${not #strings.isEmpty(theme.config.sns.twitter)}" th:href="${theme.config.sns.twitter}" title="twitter" target="_blank">
-                <i class="ri-twitter-fill"></i>
-              </a>
-              <a th:if="${not #strings.isEmpty(theme.config.sns.facebook)}" th:href="${theme.config.sns.facebook}" title="facebook" target="_blank">
-                <i class="ri-facebook-fill"></i>
-              </a>
-              <a th:if="${not #strings.isEmpty(theme.config.sns.weibo)}" th:href="${theme.config.sns.weibo}" title="weibo" target="_blank">
-                <i class="ri-weibo-fill"></i>
-              </a>
-              <a th:if="${not #strings.isEmpty(theme.config.sns.instagram)}" th:href="${theme.config.sns.instagram}" title="instagram" target="_blank">
-                <i class="ri-instagram-fill"></i>
-              </a>
-              <a th:if="${not #strings.isEmpty(theme.config.sns.steam)}" th:href="${theme.config.sns.steam}" title="steam" target="_blank">
-                <i class="ri-steam-fill"></i>
-              </a>
-              <a th:if="${not #strings.isEmpty(theme.config.sns.zhihu)}" th:href="${theme.config.sns.zhihu}" title="zhihu" target="_blank">
-                <i class="ri-zhihu-fill"></i>
-              </a>
-              <a th:if="${not #strings.isEmpty(theme.config.sns.telegram)}" th:href="${theme.config.sns.telegram}" title="telegram" target="_blank">
-                <i class="ri-telegram-fill"></i>
-              </a>
-              <a th:if="${not #strings.isEmpty(theme.config.sns.playstation)}" th:href="${theme.config.sns.playstation}" title="playstation" target="_blank">
-                <i class="ri-playstation-fill"></i>
-              </a>
-                <!-- <a href="/rss.xml" type="application/rss+xml" title="rss" target="_blank"><i class="ri-rss-fill"></i></a> -->
-              </div>
-        </div>
+  <div class="site_title_container">
+    <div class="site_title">
+      <h1>
+        <a th:href="@{${site.url}}">
+          <span th:text="${site_title}"></span>
+          <img th:src="@{/assets/images/logo.svg}" />
+        </a>
+      </h1>
     </div>
+    <div class="description">
+      <p class="sub_title" th:if="${not #strings.isEmpty(theme.config.basic.sub_title)}"
+        th:text="${theme.config.basic.sub_title}"></p>
+      <div class="my_socials">
+        <a th:if="${not #strings.isEmpty(theme.config.sns.github)}" th:href="${theme.config.sns.github}" title="github"
+          target="_blank">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a th:if="${not #strings.isEmpty(theme.config.sns.twitter)}" th:href="${theme.config.sns.twitter}"
+          title="twitter" target="_blank">
+          <i class="ri-twitter-fill"></i>
+        </a>
+        <a th:if="${not #strings.isEmpty(theme.config.sns.facebook)}" th:href="${theme.config.sns.facebook}"
+          title="facebook" target="_blank">
+          <i class="ri-facebook-fill"></i>
+        </a>
+        <a th:if="${not #strings.isEmpty(theme.config.sns.weibo)}" th:href="${theme.config.sns.weibo}" title="weibo"
+          target="_blank">
+          <i class="ri-weibo-fill"></i>
+        </a>
+        <a th:if="${not #strings.isEmpty(theme.config.sns.instagram)}" th:href="${theme.config.sns.instagram}"
+          title="instagram" target="_blank">
+          <i class="ri-instagram-fill"></i>
+        </a>
+        <a th:if="${not #strings.isEmpty(theme.config.sns.steam)}" th:href="${theme.config.sns.steam}" title="steam"
+          target="_blank">
+          <i class="ri-steam-fill"></i>
+        </a>
+        <a th:if="${not #strings.isEmpty(theme.config.sns.zhihu)}" th:href="${theme.config.sns.zhihu}" title="zhihu"
+          target="_blank">
+          <i class="ri-zhihu-fill"></i>
+        </a>
+        <a th:if="${not #strings.isEmpty(theme.config.sns.telegram)}" th:href="${theme.config.sns.telegram}"
+          title="telegram" target="_blank">
+          <i class="ri-telegram-fill"></i>
+        </a>
+        <a th:if="${not #strings.isEmpty(theme.config.sns.playstation)}" th:href="${theme.config.sns.playstation}"
+          title="playstation" target="_blank">
+          <i class="ri-playstation-fill"></i>
+        </a>
+        <!-- <a href="/rss.xml" type="application/rss+xml" title="rss" target="_blank"><i class="ri-rss-fill"></i></a> -->
+      </div>
+    </div>
+  </div>
 </div>
-Footer

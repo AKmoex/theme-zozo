@@ -1,20 +1,17 @@
-
 <!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,title = ${error.status} + ' | ' + ${#strings.defaultString(error.title, 'Internal server error')} + ' - ' +${site.title},content = ~{::content})}"
->
-  <th:block th:fragment="content">
-    <div class="content">
-      <div class="page_tags">
-          <h1>(≥o≤)</h1>
-          <h2 th:text="${#strings.defaultString(error.status + ' '+ error.title, '500 Internal server error')}"></h2>
-          <h3><a th:href="@{${site.url}}">Home</a></h3>
-          
-
-      </div>
-      <div class="pagination"></div>
+<html xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{layout :: html(head = null,title = ${error.status} + ' | ' + ${#strings.defaultString(error.title, 'Internal server error')} + ' - ' +${site.title},content = ~{::content})}">
+<th:block th:fragment="content">
+  <div class="content">
+    <div class="page_tags">
+      <h1>(≥o≤)</h1>
+      <h2 th:text="${#strings.defaultString(error.status + ' '+ error.title, '500 Internal server error')}"></h2>
+      <h3>
+        <a th:href="@{${site.url}}">Home</a>
+      </h3>
+    </div>
+    <div class="pagination"></div>
   </div>
-  </th:block>
-</html>
+</th:block>
 
+</html>

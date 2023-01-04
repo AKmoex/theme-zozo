@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html
-  lang="zh-cn"
-  xmlns:th="https://www.thymeleaf.org"
-  th:fragment="html (head,title,content)"
->
-  <head th:replace="~{modules/head::head (head=${head},title=${title})}" >
-  </head>
+<html lang="zh-cn" xmlns:th="https://www.thymeleaf.org" th:fragment="html (head,title,content)">
 
-  <body>
-    <div class="main animated fadeInDown">
-      <div th:replace="~{modules/nav::nav}" >
-      </div>
-      <div th:replace="~{modules/header::header}" >
-      </div>
-      <section>
-        <th:block th:replace="${content}" />
-      </section>
-    </div>
-    <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
-    <footer th:replace="~{modules/footer::footer}"></footer>
-    <footer th:replace="~{modules/js::js}"></footer>
-  </body>
+<head th:replace="~{modules/head::head (head=${head},title=${title})}">
+</head>
+
+<body>
+  <div class="main animated fadeInDown">
+    <div th:replace="~{modules/nav::nav}"></div>
+    <div th:replace="~{modules/header::header}"></div>
+    <section>
+      <th:block th:replace="${content}" />
+    </section>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+  <footer th:replace="~{modules/footer::footer}"></footer>
+  <footer th:replace="~{modules/js::js}"></footer>
+</body>
+
 </html>

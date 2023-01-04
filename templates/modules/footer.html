@@ -1,14 +1,14 @@
 <footer th:fragment="footer" class="footer">
-    <div class="powered_by">
-        Theme 
-        <a href="https://github.com/AKmoex/theme-zozo" target="_blank">ZO ZO</a>
-        designed by 
-        <a href="https://github.com/varkai/hugo-theme-zozo" target="_blank">VarKai,</a>
-        Proudly published with 
-        <a href="https://halo.run/" target="_blank">Halo</a>
-    </div>
+  <div class="powered_by">
+    Theme
+    <a href="https://github.com/AKmoex/theme-zozo" target="_blank">ZO ZO</a>
+    designed by
+    <a href="https://github.com/varkai/hugo-theme-zozo" target="_blank">VarKai,</a>
+    Proudly published with
+    <a href="https://halo.run/" target="_blank">Halo</a>
+  </div>
 
-    <div class="footer_slogan" th:if="${not #strings.isEmpty(theme.config.basic.footer_slogan)}">
-        <span th:text="${theme.config.basic.footer_slogan} "></span>
-    </div>
+  <div class="footer_slogan" th:if="${not #strings.isEmpty(theme.config.basic.footer_slogan)}">
+    <span th:text="${theme.config.basic.footer_slogan} "></span>
+  </div>
 </footer>

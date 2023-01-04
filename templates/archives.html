@@ -1,43 +1,36 @@
 <!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,title = 'Posts ｜ ' + ${site.title},content = ~{::content})}"
->
-  <th:block th:fragment="content">
-    <div class="content">
-      <div class="list_with_title">
-        <th:block th:each="archive : ${archives.items}">
-          <div class="listing_title" th:text="${archive.year}">
-          </div>
-          <div class="listing">
-            <th:block th:each="month : ${archive.months}">
-              <div class="listing_item" th:each="post : ${month.posts}">
-                <div class="listing_post">
-                  <a
-                    th:href="@{${post.status.permalink}}"
-                    th:title="${post.spec.title}"
-                    th:text="${post.spec.title}"
-                  ></a>
-                  <div class="post_time">
-                    <span class="date" th:text="${#dates.format(post.spec.publishTime,'MM-dd')}"></span>
-                  </div>
+<html xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{layout :: html(head = null,title = 'Posts ｜ ' + ${site.title},content = ~{::content})}">
+<th:block th:fragment="content">
+  <div class="content">
+    <div class="list_with_title">
+      <th:block th:each="archive : ${archives.items}">
+        <div class="listing_title" th:text="${archive.year}"></div>
+        <div class="listing">
+          <th:block th:each="month : ${archive.months}">
+            <div class="listing_item" th:each="post : ${month.posts}">
+              <div class="listing_post">
+                <a th:href="@{${post.status.permalink}}" th:title="${post.spec.title}" th:text="${post.spec.title}"></a>
+                <div class="post_time">
+                  <span class="date" th:text="${#dates.format(post.spec.publishTime,'MM-dd')}"></span>
                 </div>
               </div>
-            </th:block>
-          </div>
-        </th:block>
-      </div>
-      <div class="pagination">
-        <th:block th:if="${archives.hasPrevious() || archives.hasNext()}">
-          <a th:if="${archives.hasPrevious()}" th:href="@{${archives.prevUrl}}" class="pre">
-            返回上一页
-          </a>
-          <a th:if="${archives.hasNext()}" th:href="@{${archives.nextUrl}}" class="next">
-            阅读更多文章
-          </a>
-        </th:block>
-      </div>
+            </div>
+          </th:block>
+        </div>
+      </th:block>
     </div>
-  </th:block>
-</html>
+    <div class="pagination">
+      <th:block th:if="${archives.hasPrevious() || archives.hasNext()}">
+        <a th:if="${archives.hasPrevious()}" th:href="@{${archives.prevUrl}}" class="pre">
+          返回上一页
+        </a>
+        <a th:if="${archives.hasNext()}" th:href="@{${archives.nextUrl}}" class="next">
+          阅读更多文章
+        </a>
+      </th:block>
+    </div>
+  </div>
+</th:block>
 
+</html>

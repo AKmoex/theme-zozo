@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,title = 'Categories ｜ ' + ${site.title},content = ~{::content})}"
->
-  <th:block th:fragment="content">
-    <div class="content">
-      <div class="page_tags">
-        <ul>
-          <li th:each="category : ${categories}" th:if="${category.status.visiblePostCount gt 0}" >
-              <a
-                th:href="@{${category.status.permalink}}"
-                th:inline="text">
-                [[${category.spec.displayName}]]
-                  <span class="terms_count" th:text="${category.status.visiblePostCount}"></span>
-              </a>
-          </li>
-        </ul>
-      </div>
-      <div class="pagination"></div>
+<html xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{layout :: html(head = null,title = 'Categories ｜ ' + ${site.title},content = ~{::content})}">
+<th:block th:fragment="content">
+  <div class="content">
+    <div class="page_tags">
+      <ul>
+        <li th:each="category : ${categories}" th:if="${category.status.visiblePostCount gt 0}">
+          <a th:href="@{${category.status.permalink}}" th:inline="text">
+            [[${category.spec.displayName}]]
+            <span class="terms_count" th:text="${category.status.visiblePostCount}"></span>
+          </a>
+        </li>
+      </ul>
     </div>
+    <div class="pagination"></div>
+  </div>
+</th:block>
 
-  </th:block>
 </html>
