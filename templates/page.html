@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,content = ~{::content})}"
+  th:replace="~{layout :: html(head = ~{::head},title = ${singlePage.spec.title} + ' ｜ ' + ${site.title} ,content = ~{::content})}"
 >
-  <th:block th:fragment="content">
-    <h1 th:text="${singlePage.spec.title}"></h1>
-    <article th:utext="${singlePage.content.content}"></article>
+
+<th:block th:fragment="head">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@3.0/dist/browser/styles/disqusjs.css">
+</th:block>
+
+<th:block th:fragment="content">
+    <div class="content">
+      <div class="post_page">
+        <div class="post animated fadeInDown">
+            <div class="post_title post_detail_title">
+                <h2><a th:href="@{${singlePage.status.permalink}}" th:text="${singlePage.spec.title}"></a></h2>
+                <span class="date" th:text="${#dates.format(singlePage.spec.publishTime,'yyyy.MM.dd')}"></span>
+            </div>
+            <div class="post_content markdown" th:utext="${singlePage.content.content}"></div>
+            <div class="post_footer">
+            </div>
+        </div>
+        <th:block th:replace="~{modules/comments::comments}" >
+        </th:block>
+      </div>
+    </div>
   </th:block>
 </html>
