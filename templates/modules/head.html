@@ -13,7 +13,7 @@
     <th:block th:replace="${head}" />
   </th:block>
 
-  <link rel="shortcut icon" th:href="@{/assets/images/favicon.ico}" />
+  <link rel="shortcut icon" th:if="${#strings.isEmpty(site.favicon)}" th:href="@{/assets/images/favicon.ico}" />
 
   <link rel="stylesheet" type="text/css" media="screen" th:href="@{/assets/css/normalize.css}" />
   <link rel="stylesheet" type="text/css" media="screen" th:href="@{/assets/libs/animate/animate.min.css}" />

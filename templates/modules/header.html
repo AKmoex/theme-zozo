@@ -3,8 +3,8 @@
     <div class="site_title">
       <h1>
         <a th:href="@{${site.url}}">
-          <span th:text="${site_title}"></span>
-          <img th:src="@{/assets/images/logo.svg}" />
+          <img th:if="${not #strings.isEmpty(site.logo)}" th:src="${site.logo}" />
+          <img th:if="${#strings.isEmpty(site.logo)}" th:src="@{/assets/images/logo.svg}" />
         </a>
       </h1>
     </div>
