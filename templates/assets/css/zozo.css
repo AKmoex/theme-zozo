@@ -256,10 +256,34 @@ hr {
     margin-bottom: 20px;
 }
 
+.post .post_content li p {
+    margin-bottom: 0px;
+}
+
 .post .post_content a {
     text-decoration: none;
     letter-spacing: 1px;
     color: #e42b2b;
+}
+
+
+.post .post_content .toc {
+    background: #fdfdfd;
+    border-radius: 5px;
+    border: 1px solid #e6e6e6;
+    margin: 27px 0 47px 0;
+    padding: 0 15px;
+}
+
+.post .post_content .toc ul {
+    padding: 5px 42px;
+}
+
+
+.post .post_content .toc ul li ul {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .post .post_content a:hover {

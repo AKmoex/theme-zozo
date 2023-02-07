@@ -5,6 +5,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/disqusjs@3.0/dist/browser/styles/disqusjs.css">
+  <script th:src="@{/assets/libs/tocbot/tocbot.min.js}"></script>
+
 </th:block>
 
 
@@ -16,7 +18,10 @@
           <h2><a th:href="@{${post.status.permalink}}" th:text="${post.spec.title}"></a></h2>
           <span class="date" th:text="${#dates.format(post.spec.publishTime,'yyyy.MM.dd')}"></span>
         </div>
-        <div class="post_content markdown" th:utext="${post.content.content}"></div>
+        <div class="post_content markdown">
+          <div class="toc"></div>
+          <th:block th:utext="${post.content.content}"></th:block>
+        </div>
         <div class="post_footer">
           <div class="meta" th:if="${not #lists.isEmpty(post.tags)}">
             <div class="info">
